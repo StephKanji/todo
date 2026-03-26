@@ -15,12 +15,12 @@ export default function Home() {
           <h1 style={{ fontFamily: 'Orbitron, monospace', fontSize: 'clamp(36px, 7vw, 80px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: '#fff' }}>
             THE ULTIMATE<br />
             <span style={{ background: 'linear-gradient(135deg,#7b2ff7,#00f5d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              GAME VAULT
+              CREATIVES PLATFORM
             </span>
           </h1>
 
           <p style={{ fontSize: 18, color: '#64748b', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.7 }}>
-            Shop rare trading cards, legendary games, and exclusive drops. Your next obsession is one click away.
+            Shop rare gaming cards, legendary games, and exclusive drops. Your next obsession is one click away.😜
           </p>
 
           {/* CTAs */}
@@ -31,7 +31,7 @@ export default function Home() {
               color: '#fff', textDecoration: 'none', padding: '14px 32px',
               borderRadius: 12, fontWeight: 700, fontSize: 16, letterSpacing: 1,
             }}>
-              Enter the Vault <ArrowRight size={18} />
+           Explore Shop <ArrowRight size={18} />
             </Link>
             <Link href="/auth/signup" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,

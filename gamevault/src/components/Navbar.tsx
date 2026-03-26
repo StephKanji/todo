@@ -21,9 +21,9 @@ export function Navbar() {
 
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <Gamepad2 size={28} color="#00f5d4" />
+          
           <span style={{ fontFamily: 'Orbitron, monospace', fontSize: 18, fontWeight: 900, color: '#fff', letterSpacing: 2 }}>
-            GAME<span style={{ color: '#00f5d4' }}>VAULT</span>
+            GAME<span style={{ color: '#00f5d4' }}><Gamepad2 size={28} color="#00f5d4" />VAULT</span>
           </span>
         </Link>
 

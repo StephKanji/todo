@@ -11,12 +11,6 @@ export default function Home() {
       <section style={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px', paddingTop: 64 }}>
         <div style={{ textAlign: 'center', maxWidth: 800 }}>
 
-          {/* Badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(123,47,247,0.15)', border: '1px solid rgba(123,47,247,0.3)', borderRadius: 100, padding: '6px 18px', marginBottom: 32 }}>
-            <Zap size={14} color="#00f5d4" />
-            <span style={{ fontFamily: 'Share Tech Mono, monospace', fontSize: 12, color: '#00f5d4', letterSpacing: 2 }}>LEVEL UP YOUR COLLECTION</span>
-          </div>
-
           {/* Headline */}
           <h1 style={{ fontFamily: 'Orbitron, monospace', fontSize: 'clamp(36px, 7vw, 80px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, color: '#fff' }}>
             THE ULTIMATE<br />

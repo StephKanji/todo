@@ -14,7 +14,7 @@ const eslintConfig = [
     ignores: ["node_modules", ".next"],
     
   },
-  ...compat.extends("next/core-web-vitals.js"),
+  ...compat.extends("eslint-config-next/core-web-vitals.js"),
 ];
 
 export default eslintConfig;

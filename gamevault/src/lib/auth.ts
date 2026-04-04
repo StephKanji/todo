@@ -6,6 +6,7 @@ import { eq } from 'drizzle-orm'
 import bcrypt from 'bcryptjs'
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.AUTH_SECRET,
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/auth/signin',
@@ -20,23 +21,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null
-
-        const user = await db.query.users.findFirst({
-          where: eq(users.email, credentials.email as string),
-        })
-        if (!user) return null
-
-        if (!user.emailVerified) {
-          throw new Error('Please verify your email first')
+        try {
+          const user = await db.query.users.findFirst({
+            where: eq(users.email, credentials.email as string),
+          })
+          if (!user) return null
+          if (!user.emailVerified) throw new Error('Please verify your email first')
+          const valid = await bcrypt.compare(credentials.password as string, user.passwordHash)
+          if (!valid) return null
+          return { id: user.id, name: user.name, email: user.email }
+        } catch (err: any) {
+          throw new Error(err.message || 'Authentication failed')
         }
-
-        const valid = await bcrypt.compare(
-          credentials.password as string,
-          user.passwordHash
-        )
-        if (!valid) return null
-
-        return { id: user.id, name: user.name, email: user.email }
       },
     }),
   ],
